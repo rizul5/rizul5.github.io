@@ -47,8 +47,8 @@ $string = explode('-', $phase['name']);
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
     <meta property="fb:app_id" content="608906650497752">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../assets/css/yunita.css">
 
 </head>
 
