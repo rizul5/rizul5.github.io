@@ -6,14 +6,17 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta property="og:url" content="https://ryuinferno.dev/profile" />
+    <meta property="og:url" content="https://rizulhanif.com" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="¯\_(ツ)_/¯" />
     <meta
       property="og:description"
       content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis magni, odit provident, eius vitae, ipsam vel dolore possimus ad veniam consequuntur quam recusandae suscipit iure accusamus temporibus mollitia eligendi tempora."
     />
-    <meta property="og:image" content="assets/img/profile/default.jpg" />
+    <meta
+      property="og:image"
+      content="https://rizulhanif.com/assets/img/profile/default.jpg"
+    />
     <meta property="fb:app_id" content="608906650497752" />
     <title>¯\_(ツ)_/¯</title>
 
@@ -34,8 +37,8 @@
     <link href="assets/css/toast.css" rel="stylesheet" />
     <style>
       @font-face {
-        font-family: "Roboto";
-        src: ("/assets/fonts/Roboto-Regular.ttf") format("truetype");
+        font-family: 'Roboto';
+        src: ('/assets/fonts/Roboto-Regular.ttf') format('truetype');
       }
     </style>
     <link rel="stylesheet" href="assets/css/profile-card.css" />
@@ -125,15 +128,15 @@
     <script src="assets/js/script.js"></script>
     <script type="text/javascript">
       crispInit();
-      $("img.profile-img").attr("src", base64img);
+      $('img.profile-img').attr('src', base64img);
       Toast.fire({
-        icon: "success",
-        title: "Hello!",
+        icon: 'success',
+        title: 'Hello!',
       });
       window.CRISP_READY_TRIGGER = function () {
-        if ($crisp.is("chat:closed") === true) {
+        if ($crisp.is('chat:closed') === true) {
           // Do something.
-          $crisp.push(["do", "chat:toggle"]);
+          $crisp.push(['do', 'chat:toggle']);
         }
         openChat();
       };
