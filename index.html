@@ -48,9 +48,7 @@
 	<link rel="icon" href="favicon.ico" />
 </head>
 
-<body class="min-h-fullscreen bg-img center-vh p-20" data-overlay="7" style="
-      background-image: url(https://source.unsplash.com/featured/?programming);
-    ">
+<body class="min-h-fullscreen bg-img center-vh p-20" data-overlay="7">
 	<div class="vertical-center">
 		<div class="c-card">
 			<div class="c-card-header">
@@ -87,19 +85,34 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/script.js"></script>
 	<script type="text/javascript">
-		crispInit();
-		$('img.profile-img').attr('src', base64img);
-		Toast.fire({
-			icon: 'success',
-			title: 'Hello!',
+		function getRandomPictures(pexels_api_key, keyword) {
+			$.ajax({
+				headers: { 'Authorization': pexels_api_key },
+				url: "https://api.pexels.com/v1/search?query=" + keyword,
+				success: function (data) {
+					images = data.photos;
+					image = images[Math.floor(Math.random() * images.length)].src.large
+					$("body.bg-img").css("background-image", "url(" + image + ")");
+				}
+			});
+		}
+
+		$(document).ready(function () {
+			getRandomPictures("kKFs1lrXK7IRnnCiaasBgThd1fBCjlJoVKYXBldBoRooV7mU5t4Gwtbv", "code");
+			crispInit();
+			$('img.profile-img').attr('src', base64img);
+			Toast.fire({
+				icon: 'success',
+				title: 'Hello!',
+			});
+			window.CRISP_READY_TRIGGER = function () {
+				if ($crisp.is('chat:closed') === true) {
+					// Do something.
+					$crisp.push(['do', 'chat:toggle']);
+				}
+				openChat();
+			};
 		});
-		window.CRISP_READY_TRIGGER = function () {
-			if ($crisp.is('chat:closed') === true) {
-				// Do something.
-				$crisp.push(['do', 'chat:toggle']);
-			}
-			openChat();
-		};
 	</script>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7D8NDBC20T"></script>
