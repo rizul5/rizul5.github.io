@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta property="og:url" content="https://www.rizulhanif.com" />
 	<meta property="og:type" content="article" />
@@ -11,109 +11,166 @@
 		content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis magni, odit provident, eius vitae, ipsam vel dolore possimus ad veniam consequuntur quam recusandae suscipit iure accusamus temporibus mollitia eligendi tempora." />
 	<meta property="og:image" content="https://www.rizulhanif.com/assets/img/pexels-photo-5380664.jpeg" />
 	<meta property="fb:app_id" content="1191249984776113" />
-	<title>¯\_(ツ)_/¯</title>
-
-	<!-- Styles -->
-	<link href="vendor/bootstrap-theadmin-master/css/core.min.css" rel="stylesheet" />
-	<link href="vendor/bootstrap-theadmin-master/css/app.min.css" rel="stylesheet" />
-	<link href="vendor/bootstrap-theadmin-master/css/style.min.css" rel="stylesheet" />
-	<link href="assets/css/sweetalert2.min.css" rel="stylesheet" />
-	<link href="assets/css/toast.css" rel="stylesheet" />
-	<style>
-		@font-face {
-			font-family: 'Roboto';
-			src: ('/assets/fonts/Roboto-Regular.ttf') format('truetype');
-		}
-	</style>
-	<link rel="stylesheet" href="assets/css/profile-card.css" />
-	<style>
-		p {
-			margin: unset;
-		}
-
-		::-moz-selection {
-			/* Code for Firefox */
-			color: #483c8b;
-			background: whitesmoke;
-		}
-
-		::selection {
-			color: #483c8b;
-			background: whitesmoke;
-		}
-	</style>
-
+	<title>Ifrizul Hanif Muhammad</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" href="favicon.ico" />
 	<link rel="icon" href="favicon.ico" />
-</head>
-
-<body class="min-h-fullscreen bg-img center-vh p-20" data-overlay="7">
-	<div class="vertical-center">
-		<div class="c-card">
-			<div class="c-card-header">
-				<img class="profile-img" alt="Profile Image" src="assets/img/profile/default.jpg" />
-			</div>
-			<div class="c-card-body">
-				<p class="name">Ifrizul Hanif Muhammad, S.Kom.</p>
-				<a href="mailto:ryu@rizulhanif.com" class="mail">ryu@rizulhanif.com</a>
-				<p class="job">
-					Data Scientist |<br />DevOps |<br />Security Analyst |
-				</p>
-				Software Architect
-			</div>
-
-			<div class="social-links">
-				<a class="fab fa fa-github social-icon" target="_blank" href="https://github.com/rizul5"></a>
-				<a class="fab fa fa-twitter social-icon" target="_blank" href="https://twitter.com/substanceno1839"></a>
-				<a class="fab fa fa-youtube-play social-icon" target="_blank"
-					href="https://www.youtube.com/@rizulhanif"></a>
-				<a class="fab fa fa-linkedin-square social-icon" target="_blank"
-					href="https://www.linkedin.com/in/ifrizul-hanif"></a>
-			</div>
-
-			<div class="c-card-footer">
-				<p class="count">
-					<span>0</span> Followers | <span>94</span> Following
-				</p>
-			</div>
-		</div>
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/sweetalert2.min.js"></script>
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/script.js"></script>
-	<script type="text/javascript">
-		function getRandomPictures(pexels_api_key, keyword) {
-			$.ajax({
-				headers: { 'Authorization': pexels_api_key },
-				url: "https://api.pexels.com/v1/search?query=" + keyword,
-				success: function (data) {
-					images = data.photos;
-					image = images[Math.floor(Math.random() * images.length)].src.large
-					$("body.bg-img").css("background-image", "url(" + image + ")");
-				}
-			});
+	<style type="text/css">
+		body {
+			background-color: #000
 		}
 
-		$(document).ready(function () {
-			getRandomPictures("kKFs1lrXK7IRnnCiaasBgThd1fBCjlJoVKYXBldBoRooV7mU5t4Gwtbv", "code");
-			crispInit();
-			$('img.profile-img').attr('src', base64img);
-			Toast.fire({
-				icon: 'success',
-				title: 'Hello!',
-			});
-			window.CRISP_READY_TRIGGER = function () {
-				if ($crisp.is('chat:closed') === true) {
-					// Do something.
-					$crisp.push(['do', 'chat:toggle']);
+		#console {
+			font-family: courier, monospace;
+			color: #fff;
+			width: 750px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 100px;
+			font-size: 14px;
+		}
+
+		a {
+			color: #0bc;
+			text-decoration: none;
+		}
+
+		#a {
+			color: #0f0;
+		}
+
+		#c {
+			color: #0bc;
+		}
+
+		#b {
+			color: #ff0096;
+		}
+	</style>
+</head>
+
+<body>
+	<script type="text/javascript">
+		var Typer = {
+			text: null,
+			accessCountimer: null,
+			index: 0, // current cursor position
+			speed: 2, // speed of the Typer
+			file: "", //file, must be setted
+			accessCount: 0, //times alt is pressed for Access Granted
+			deniedCount: 0, //times caps is pressed for Access Denied
+			init: function () {// inizialize Hacker Typer
+				accessCountimer = setInterval(function () { Typer.updLstChr(); }, 500); // inizialize timer for blinking cursor
+				$.get(Typer.file, function (data) {// get the text file
+					Typer.text = data;// save the textfile in Typer.text
+					Typer.text = Typer.text.slice(0, Typer.text.length - 1);
+				});
+			},
+
+			content: function () {
+				return $("#console").html();// get console content
+			},
+
+			write: function (str) {// append to console content
+				$("#console").append(str);
+				return false;
+			},
+
+			makeAccess: function () {//create Access Granted popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
+				Typer.hidepop(); // hide all popups
+				Typer.accessCount = 0; //reset count
+				var ddiv = $("<div id='gran'>").html(""); // create new blank div and id "gran"
+				ddiv.addClass("accessGranted"); // add class to the div
+				ddiv.html("<h1>ACCESS GRANTED</h1>"); // set content of div
+				$(document.body).prepend(ddiv); // prepend div to body
+				return false;
+			},
+			makeDenied: function () {//create Access Denied popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
+				Typer.hidepop(); // hide all popups
+				Typer.deniedCount = 0; //reset count
+				var ddiv = $("<div id='deni'>").html(""); // create new blank div and id "deni"
+				ddiv.addClass("accessDenied");// add class to the div
+				ddiv.html("<h1>ACCESS DENIED</h1>");// set content of div
+				$(document.body).prepend(ddiv);// prepend div to body
+				return false;
+			},
+
+			hidepop: function () {// remove all existing popups
+				$("#deni").remove();
+				$("#gran").remove();
+			},
+
+			addText: function (key) {//Main function to add the code
+				if (key.keyCode == 18) {// key 18 = alt key
+					Typer.accessCount++; //increase counter
+					if (Typer.accessCount >= 3) {// if it's presed 3 times
+						Typer.makeAccess(); // make access popup
+					}
+				} else if (key.keyCode == 20) {// key 20 = caps lock
+					Typer.deniedCount++; // increase counter
+					if (Typer.deniedCount >= 3) { // if it's pressed 3 times
+						Typer.makeDenied(); // make denied popup
+					}
+				} else if (key.keyCode == 27) { // key 27 = esc key
+					Typer.hidepop(); // hide all popups
+				} else if (Typer.text) { // otherway if text is loaded
+					var cont = Typer.content(); // get the console content
+					if (cont.substring(cont.length - 1, cont.length) == "|") // if the last char is the blinking cursor
+						$("#console").html($("#console").html().substring(0, cont.length - 1)); // remove it before adding the text
+					if (key.keyCode != 8) { // if key is not backspace
+						Typer.index += Typer.speed;	// add to the index the speed
+					} else {
+						if (Typer.index > 0) // else if index is not less than 0
+							Typer.index -= Typer.speed;//	remove speed for deleting text
+					}
+					var text = Typer.text.substring(0, Typer.index)// parse the text for stripping html enities
+					var rtn = new RegExp("\n", "g"); // newline regex
+
+					$("#console").html(text.replace(rtn, "<br/>"));// replace newline chars with br, tabs with 4 space and blanks with an html blank
+					window.scrollBy(0, 50); // scroll to make sure bottom is always visible
 				}
-				openChat();
-			};
-		});
+				if (key.preventDefault && key.keyCode != 122) { // prevent F11(fullscreen) from being blocked
+					key.preventDefault()
+				};
+				if (key.keyCode != 122) { // otherway prevent keys default behavior
+					key.returnValue = false;
+				}
+			},
+
+			updLstChr: function () { // blinking cursor
+				var cont = this.content(); // get console
+				if (cont.substring(cont.length - 1, cont.length) == "|") // if last char is the cursor
+					$("#console").html($("#console").html().substring(0, cont.length - 1)); // remove it
+				else
+					this.write("|"); // else write it
+			}
+		}
+
+		function replaceUrls(text) {
+			var http = text.indexOf("http://");
+			var space = text.indexOf(".me ", http);
+			if (space != -1) {
+				var url = text.slice(http, space - 1);
+				return text.replace(url, "<a href=\"" + url + "\">" + url + "</a>");
+			} else {
+				return text
+			}
+		}
+		Typer.speed = 3;
+		Typer.file = "assets/textfile.txt";
+		Typer.init();
+
+		var timer = setInterval("t();", 30);
+		function t() {
+			Typer.addText({ "keyCode": 123748 });
+			if (Typer.index > Typer.text.length) {
+				clearInterval(timer);
+			}
+		}
+
 	</script>
+	<div id="console"></div>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7D8NDBC20T"></script>
 	<script>

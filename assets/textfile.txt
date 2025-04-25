@@ -1,0 +1,21 @@
+<span id="a">ryu@rizulhanif.com</span>:<span id="b">~</span><span id="c">$</span> uname -a<br/>
+Ifrizul Hanif Muhammad Indonesia-J.South #154-Male SMP Mon Jan 05 09:57:27 UTC+7 1998 x86_64 x86_64 x86_64 Jakarta/Indonesia<br/><br/>
+<span id="a">ryu@rizulhanif.com</span>:<span id="b">~</span><span id="c">$</span> ps ax | grep activities<br/>
+   PID TTY      STAT   TIME COMMAND
+ 4802 tty1      Rs+     0:00 [fatherhood]<br/>
+ 4806 pts/1     S&lt;l     0:00 [devops eng &amp; arch]<br/>
+ 5640 pts/17    S&lt;l     0:00 [Open Source]<br/>
+ 5704 pts/14    S&lt;l     0:00 [Open Data]<br/>
+ 5745 pts/26    Ssl     0:00 [DIY]<br/>
+ 5991 tty2      Ssl     0:00 [ryu@rizulhanif.com]<br/><br/>
+<span id="a">ryu@rizulhanif.com</span>:<span id="b">~</span><span id="c">$</span> cat /proc/ioports<br/>
+0000-03af : Social Bus 0000:00<br/>
+&nbsp;&nbsp;0000-001f : <a href="https://github.com/rizul5">github</a><br/>
+&nbsp;&nbsp;0040-0043 : <a href="https://gitlab.com/ifrizulhanif">gitlab</a><br/>
+&nbsp;&nbsp;0020-0021 : <a href="https://bitbucket.org/juniorvulnerable">bitbucket</a><br/>
+&nbsp;&nbsp;0050-0053 : <a href="https://www.linkedin.com/in/ifrizul-hanif">linkedin</a><br/>
+&nbsp;&nbsp;0060-0060 : <a href="https://x.com/substanceno1839">twitter</a><br/>
+&nbsp;&nbsp;0064-0064 : <a href="mailto:ryu@rizulhanif.com">email</a><br/>
+03b0-03df : Media Bus 0000:00<br/>
+&nbsp;&nbsp;03c0-03df : <a href="https://dev.to/ryuinferno">Blog & Stuff</a><br/>
+<span id="a">ryu@rizulhanif.com</span>:<span id="b">~</span><span id="c">$</span>
